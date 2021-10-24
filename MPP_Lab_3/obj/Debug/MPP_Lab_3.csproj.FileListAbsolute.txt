@@ -1,7 +1,0 @@
-D:\С#\MPP_Labs\MPP_Lab_3\bin\Debug\MPP_Lab_3.exe.config
-D:\С#\MPP_Labs\MPP_Lab_3\bin\Debug\MPP_Lab_3.exe
-D:\С#\MPP_Labs\MPP_Lab_3\bin\Debug\MPP_Lab_3.pdb
-D:\С#\MPP_Labs\MPP_Lab_3\obj\Debug\MPP_Lab_3.csproj.AssemblyReference.cache
-D:\С#\MPP_Labs\MPP_Lab_3\obj\Debug\MPP_Lab_3.csproj.CoreCompileInputs.cache
-D:\С#\MPP_Labs\MPP_Lab_3\obj\Debug\MPP_Lab_3.exe
-D:\С#\MPP_Labs\MPP_Lab_3\obj\Debug\MPP_Lab_3.pdb

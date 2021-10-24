@@ -2,16 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MPP_Lab_3
 {
     class Program
     {
+        struct Asm
+        {
+            public string Namespace;
+            public string Name;
+
+            public Asm(string Namespace, string Name)
+            {
+                this.Namespace = Namespace;
+                this.Name = Name;
+            }
+        }
+
+        private static List<Asm> members = new List<Asm>();
+
         static void Main(string[] args)
-        {            
-            List<string> met = new List<string>();
+        {
             string path;
             Console.WriteLine("Path to dll or exe: ");
             path = Console.ReadLine();
@@ -28,17 +39,17 @@ namespace MPP_Lab_3
                     if (m.IsPublic)
                     {
                         Console.WriteLine(m.Name);
-                        met.Add(m.Name);
+                        members.Add(new Asm(t.FullName, m.Name));
                     }
-                }                
+                }
                 Console.WriteLine();
             }
 
-            var sortedMethods = met.OrderBy(m => m);
+            var sortedMembers = members.OrderBy(t => t.Namespace).ThenBy(m => m.Name);
 
-            foreach (var m in sortedMethods)
-            {                
-                Console.WriteLine(m);                                  
+            foreach (var m in sortedMembers)
+            {
+                Console.WriteLine($"{m.Namespace}, {m.Name}");
             }
             Console.ReadLine();
         }
