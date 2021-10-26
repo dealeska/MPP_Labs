@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Task_2
 {
@@ -27,7 +28,7 @@ namespace Task_2
             timer = new Timer(tm, null, 0, period);
         }
 
-        public void Add(string item)
+        public async void Add(string item)
         {
             bool isOverflow = false;
             lock (lockTread)
@@ -38,7 +39,7 @@ namespace Task_2
 
             if (isOverflow)
             {
-                Write(null);
+                await Task.Run(() => Write(null));
             }
         }
 
