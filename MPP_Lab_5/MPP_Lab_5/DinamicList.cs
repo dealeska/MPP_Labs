@@ -87,8 +87,8 @@ namespace MPP_Lab_5
 
         private int IndexOf(T x)
         {
-            int i = 0;
-            while ((i < Count) && (!_list[i].Equals(x)))
+            int i = 0;            
+            while ((_list[i] == null) || (i < Count) && (!_list[i].Equals(x)))
             {
                 i++;
             }

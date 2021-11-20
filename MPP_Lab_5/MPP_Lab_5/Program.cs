@@ -5,35 +5,50 @@ namespace MPP_Lab_5
     class Program
     {
         static void Main(string[] args)
-        {
-            DinamicList<int> a1 = new DinamicList<int>() { 3, 6, 8 };
-            DinamicList<int> aa = new DinamicList<int>(a1);
-            Console.WriteLine("count: " + aa.Count);
-            Console.WriteLine("capasity: " + aa.Capasity);
-            aa.Add(5);
-            aa.Add(6);
-            aa.Add(7);
-            Console.WriteLine("count: " + aa.Count);
-            Console.WriteLine("capasity: " + aa.Capasity);
-            aa.Remove(5);
-            Console.WriteLine("count: " + aa.Count);
-            Console.WriteLine("capasity: " + aa.Capasity);
-            aa.Add(8);
-            aa.Add(9);
-            aa.Add(10);
-            aa.Add(11);
-            Console.WriteLine("count: " + aa.Count);
-            Console.WriteLine("capasity: " + aa.Capasity);
-            aa.RemoveAt(3);
+        {           
+            DinamicList<string> names = new DinamicList<string>() { "Gleb", "Olga" };
+            Console.WriteLine("Сount: " + names.Count);
+            Console.WriteLine("Сapasity: " + names.Capasity);
 
-            foreach(var item in aa)
+            names.Add("Alesya");
+            names.Add("Katya");
+            names.Add("Ksusha");
+            Console.WriteLine("Count: " + names.Count);
+            Console.WriteLine("Capasity: " + names.Capasity);
+            PrintList(names);
+
+            names.Remove("Katya");
+            Console.WriteLine("Count: " + names.Count);
+            Console.WriteLine("Capasity: " + names.Capasity);
+            PrintList(names);
+
+            names.Add("Matvei");
+            names.Add("Alexandr");
+            names.Add("Kirill");
+            names.Add("Denis");
+            Console.WriteLine("Count: " + names.Count);
+            Console.WriteLine("Capasity: " + names.Capasity);
+            PrintList(names);
+
+            names.RemoveAt(3);
+            names.RemoveAt(names.Count - 1);
+            Console.WriteLine("Count: " + names.Count);
+            Console.WriteLine("Capasity: " + names.Capasity);
+            PrintList(names);
+
+            names.Clear();
+            Console.WriteLine("Count: " + names.Count);
+            Console.WriteLine("Capasity: " + names.Capasity);
+            Console.ReadLine();
+        }
+
+        static void PrintList<T>(DinamicList<T> list)
+        {
+            foreach (var item in list)
             {
                 Console.Write(item + ",");
             }
-            aa.Clear();
-            Console.WriteLine("\ncount: " + aa.Count);
-            Console.WriteLine("capasity: " + aa.Capasity);
-            Console.ReadLine();
+            Console.WriteLine("\n");
         }
     }
 }
