@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MPP_Lab_5
 {
-    class DinamicList<T> : IEnumerable<T>
+    public class DinamicList<T> : IEnumerable<T>
     {
         public int Count { get; private set; }
         public int Capasity { get; private set; }
@@ -14,7 +14,7 @@ namespace MPP_Lab_5
         {
             _list = new T[0];
             Count = 0;
-            Capasity = 0;
+            Capasity = 0;            
         }
 
         public DinamicList(IEnumerable<T> newList)
@@ -91,10 +91,6 @@ namespace MPP_Lab_5
             while ((_list[i] == null) || (i < Count) && (!_list[i].Equals(x)))
             {
                 i++;
-            }
-            if (i == Count)
-            {
-                throw new NotImplementedException();
             }
             return i;            
         }
