@@ -4,20 +4,20 @@ using System.Collections.Generic;
 
 namespace MPP_Lab_5
 {
-    public class DinamicList<T> : IEnumerable<T>
+    public class DynamicList<T> : IEnumerable<T>
     {
         public int Count { get; private set; }
-        public int Capasity { get; private set; }
+        public int Capacity { get; private set; }
         private T[] _list;
 
-        public DinamicList()
+        public DynamicList()
         {
             _list = new T[0];
             Count = 0;
-            Capasity = 0;            
+            Capacity = 0;            
         }
 
-        public DinamicList(IEnumerable<T> newList)
+        public DynamicList(IEnumerable<T> newList)
         {
             _list = new T[0];
             Count = 0;
@@ -27,7 +27,7 @@ namespace MPP_Lab_5
             }
         }
 
-        public DinamicList(int count)
+        public DynamicList(int count)
         {
             _list = new T[count];
             Count = count;
@@ -44,8 +44,8 @@ namespace MPP_Lab_5
             Count++;
             if (_list.Length < Count)
             {
-                Capasity = _list.Length * 2;
-                Array.Resize(ref _list, _list.Length == 0 ? 1 : Capasity);
+                Capacity = _list.Length * 2;
+                Array.Resize(ref _list, _list.Length == 0 ? 1 : Capacity);
             }
         }
 
@@ -99,7 +99,7 @@ namespace MPP_Lab_5
         {
             Array.Resize(ref _list, 0);
             Count = 0;
-            Capasity = 0;
+            Capacity = 0;
         }
 
         public IEnumerator GetEnumerator()
